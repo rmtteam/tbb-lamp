@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+    tbb-apache:
+        build: ./images/nginx
+        container_name: tbb-apache
+        restart: always
+        image: tbb-apache
+        restart: always
+        ports:
+            - "8080:80"
+        volumes:
+            - ../data/etc/apache2/conf.d:/etc/apache2/conf.d
+            - ../data/var/www:/var/www:rw
+        links:
+            - tbb-php
+
+    tbb-php:
+        build: ./images/php-fpm
+        container_name: tbb-php
+        restart: always
+        image: tbb-php
+        restart: always
+        ports: 
+            - "9000:9000"
+        volumes:
+            - ../data/var/www:/var/www:rw
