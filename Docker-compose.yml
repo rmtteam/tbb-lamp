@@ -2,7 +2,7 @@ version: '3'
 
 services:
     tbb-apache:
-        build: ./images/nginx
+        build: ./images/apache2
         container_name: tbb-apache
         restart: always
         image: tbb-apache
@@ -35,10 +35,10 @@ services:
       environment:
         - MYSQL_ROOT_PASSWORD=root
 
-    dockerUi:
-      image: dockerui/dockerui
-      restart: always
-      volumes:
-          - /var/run/docker.sock:/var/run/docker.sock
-      ports:
-          - "5000:5050"
+    #dockerUi:
+    #  image: dockerui/dockerui
+    #  restart: always
+    #  volumes:
+    #      - /var/run/docker.sock:/var/run/docker.sock
+    #  ports:
+    #      - "5000:5050"
