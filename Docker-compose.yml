@@ -25,3 +25,12 @@ services:
             - "9000:9000"
         volumes:
             - ../data/var/www:/var/www:rw
+
+    tbb-mysql:
+      image: mariadb:5.5
+      container_name: tbb-mysql
+      restart: always
+      volumes:
+        - /var/mysql:/var/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=root
