@@ -35,7 +35,7 @@ services:
       environment:
         - MYSQL_ROOT_PASSWORD=root
 
-    #dockerUi:
+    ##dockerUi:
     #  image: dockerui/dockerui
     #  restart: always
     #  volumes:
